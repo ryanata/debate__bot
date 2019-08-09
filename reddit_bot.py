@@ -7,7 +7,8 @@ reddit= praw.Reddit(client_id=client_id,client_secret=client_secret,username=use
 
 user_reports= {}
 reporters={}
-bottom_text='\n\n ______________________________\n\n^(this is a bot. more info can be retrieved here : [Github](https://github.com/ryanata/debate__bot))'
+reply_template = '[Github](https://github.com/ryanata/debate__bot)'
+bottom_text=f'\n\n ______________________________\n\n^(this is a bot. more info can be retrieved here : ) ^{reply_template} '
 
 def report(user):
 	try:
@@ -67,6 +68,7 @@ for post in stream:
 		else:
 			out=(user_stats(user))
 			post.reply(f'{out}{bottom_text}')
+			print(out)
 		
 	elif type(post).__name__ == 'Comment' and post.author is not None:
 		post.refresh()
@@ -149,9 +151,3 @@ for post in stream:
 
 
    
-
-
-
-
-
-
