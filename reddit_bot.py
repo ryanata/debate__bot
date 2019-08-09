@@ -50,7 +50,7 @@ def user_stats(user):
 
 	return (f'User {user} has {posts} posts in the /r/debatetrade server and {reports} reports. Their account was created {int(timediff(user.created_utc))} days ago')
 
-subreddit = reddit.subreddit('waterdebate47')
+subreddit = reddit.subreddit('debatetrade')
 
 
 
